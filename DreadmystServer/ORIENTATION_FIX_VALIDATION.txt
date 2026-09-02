@@ -1,0 +1,11 @@
+Dreadmyst movement-facing validation - server v0.2.7
+
+Static source checks passed:
+- Entity orientation is normalized to [0, 2pi).
+- Player movement facing uses a tiny squared movement epsilon, so 0.75-axis A/D steps are not ignored.
+- GP_Server_UnitOrientation broadcasts the canonical stored angle.
+- v0.2.6 movement reconciliation behavior is retained.
+
+Build validation:
+- Full Ubuntu Release server build completed successfully and linked DreadmystServer.
+- Existing BOOST_ERROR_CODE_HEADER_ONLY redefinition warning remains non-fatal.

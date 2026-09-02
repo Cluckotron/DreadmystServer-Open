@@ -1,0 +1,28 @@
+Dreadmyst Community Server v0.2.8 - Gameplay repair validation
+Date: 2026-09-02
+
+Static validator: Server/tests/validate_gameplay_repair.py
+Result: 19 passed / 0 failed
+
+Native Linux Release build:
+- CMake incremental Release build completed successfully
+- DreadmystServer linked successfully
+- one pre-existing BOOST_ERROR_CODE_HEADER_ONLY redefinition warning remains
+
+Protocol/runtime smoke tests performed against the repaired server:
+- single-client authentication/world entry: PASS
+- existing/new character spellbook received 7 starter spells: PASS
+- class 1 spellbook observed: 9,10,13,81,82,245,273
+- combat harness completed its maintained 6 checks without a server/protocol failure
+
+Validated repair areas:
+- player_create_spell is loaded from the released game.db
+- new-character starter spell seeding and existing-character login backfill
+- released static spell/action IDs
+- hostile/game-object spell target enum values
+- NPC movement uses logical 4 cells/sec basis scaled by MoveSpeedPct
+- NPC home-arrival tolerance uses logical units
+- database spell range/radius converts from twentieth-cell units before gameplay checks
+- Holy Wrath and base attacks resolve as hostile-unit spells
+
+The packaged source intentionally excludes build/, pytest caches, and generated server.db files.
