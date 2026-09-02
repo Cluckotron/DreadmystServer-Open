@@ -1,0 +1,34 @@
+# Build outputs
+/Server/build/
+/build/
+*.o
+*.a
+*.so
+*.out
+
+# Runtime-generated databases / state
+**/server.db
+**/server.db-*
+
+# Original game runtime/data fetched by setup_game_data.sh
+/game/
+/.runtime_source/
+
+# Local configuration/secrets
+.env
+.env.*
+!.env.example
+*.local.ini
+*.local.conf
+
+# Logs / caches
+*.log
+__pycache__/
+*.pyc
+
+# IDE / OS
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
